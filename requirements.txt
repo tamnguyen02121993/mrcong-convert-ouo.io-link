@@ -4,4 +4,4 @@ pip==23.2.1
 Requests==2.31.0
 lxml==4.9.3
 fastapi==0.103.2
-uvicorn==0.23.2
+uvicorn==0.22.0
