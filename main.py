@@ -29,10 +29,7 @@ class ConvertLinkResponse(BaseModel):
 app = FastAPI()
 
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
-    "http://localhost",
-    "http://localhost:8080",
+    "https://mrcong-nest-api.vercel.app",
 ]
 
 app.add_middleware(CORSMiddleware, 
