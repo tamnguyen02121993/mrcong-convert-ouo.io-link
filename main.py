@@ -5,6 +5,7 @@ from urllib.parse import urlparse
 from fastapi import FastAPI, Body
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import Response
 
 # ouo url
 # Examples:
@@ -72,6 +73,10 @@ client.headers.update({
 
 # -------------------------------------------
 # OUO BYPASS
+
+@app.get('/', status_code=200)
+async def home():
+    return Response(status_code=200)
 
 @app.post('/api/convert-link')
 async def ouo_bypass(convertLinkRequest: ConvertLinkRequest) -> ConvertLinkResponse:
