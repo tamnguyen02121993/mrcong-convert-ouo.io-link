@@ -2,7 +2,6 @@ import re
 from curl_cffi import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
-from typing import Annotated
 from fastapi import FastAPI, Body
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -78,7 +77,7 @@ client.headers.update({
 # OUO BYPASS
 
 @app.post('/api/convert-link')
-async def ouo_bypass(convertLinkRequest: Annotated[ConvertLinkRequest, Body()]) -> ConvertLinkResponse:
+async def ouo_bypass(convertLinkRequest: ConvertLinkRequest) -> ConvertLinkResponse:
     tempurl = convertLinkRequest.url.replace("ouo.press", "ouo.io")
     p = urlparse(tempurl)
     id = tempurl.split('/')[-1]
