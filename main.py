@@ -97,7 +97,7 @@ async def ouo_bypass(convertLinkRequest: ConvertLinkRequest) -> ConvertLinkRespo
         if res.headers.get('Location'): break
 
         bs4 = BeautifulSoup(res.content, 'lxml')
-        inputs = bs4.form.findAll("input", {"name": re.compile(r"token$")})
+        inputs = bs4.find_all("input", {"name": re.compile(r"token$")})
         data = { input.get('name'): input.get('value') for input in inputs }
         data['x-token'] = RecaptchaV3()
         
