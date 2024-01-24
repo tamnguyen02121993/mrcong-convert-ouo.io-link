@@ -6,6 +6,8 @@ from fastapi import FastAPI, Body
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
+import uvicorn
+
 
 # ouo url
 # Examples:
@@ -26,6 +28,10 @@ class ConvertLinkResponse(BaseModel):
     #     self.converted_link = converted_link
     original_link: str
     converted_link: str
+
+
+if __name__ == "__main__":
+  uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
 
 app = FastAPI()
 
