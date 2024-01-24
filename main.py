@@ -22,7 +22,7 @@ import uvicorn
 class ConvertLinkRequest(BaseModel):
     url: str
 
-class ConvertLinkResponse(BaseModel):
+class ConvertLinkResponse():
     # def __init__(self, original_link: str, converted_link: str) -> None:
     #     self.original_link = original_link
     #     self.converted_link = converted_link
