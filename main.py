@@ -85,7 +85,7 @@ async def home():
     return Response(status_code=200)
 
 @app.post('/api/convert-link')
-async def ouo_bypass(convertLinkRequest: ConvertLinkRequest) -> ConvertLinkResponse:
+async def ouo_bypass(convertLinkRequest: ConvertLinkRequest):
     tempurl = convertLinkRequest.url.replace("ouo.press", "ouo.io")
     p = urlparse(tempurl)
     id = tempurl.split('/')[-1]
