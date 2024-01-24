@@ -114,7 +114,7 @@ async def ouo_bypass(convertLinkRequest: ConvertLinkRequest) -> ConvertLinkRespo
     #     'bypassed_link': res.headers.get('Location')
     # }
     response =  ConvertLinkResponse(converted_link=res.headers.get('Location'), original_link=convertLinkRequest.url)
-    return response.model_dump()
+    return response
 
 # -------------------------------------------
 
