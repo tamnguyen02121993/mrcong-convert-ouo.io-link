@@ -113,8 +113,11 @@ async def ouo_bypass(convertLinkRequest: ConvertLinkRequest) -> ConvertLinkRespo
     #     'original_link': url,
     #     'bypassed_link': res.headers.get('Location')
     # }
-    response =  ConvertLinkResponse(converted_link=res.headers.get('Location'), original_link=convertLinkRequest.url)
-    return response
+    #response =  ConvertLinkResponse(converted_link=res.headers.get('Location'), original_link=convertLinkRequest.url)
+    return {
+        "converted_link": res.headers.get('Location'),
+        "original_link": convertLinkRequest.url
+    }
 
 # -------------------------------------------
 
